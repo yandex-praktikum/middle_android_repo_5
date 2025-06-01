@@ -11,6 +11,7 @@ import androidx.work.PeriodicWorkRequestBuilder
 import androidx.work.WorkManager
 import com.yandex.practicum.middle_homework_5.settings.data.data_store.SettingContainer.Companion.DEFAULT_REFRESH_PERIOD
 import com.yandex.practicum.middle_homework_5.settings.data.data_store.SettingContainer.Companion.FIST_LAUNCH_DELAY
+import com.yandex.practicum.middle_homework_5.settings.ui.contract.SettingsRepository
 import com.yandex.practicum.middle_homework_5.ui.contract.WorkManagerService
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
@@ -20,7 +21,7 @@ import java.util.concurrent.TimeUnit
 
 class WorkManagerServiceImp(
     private val context: Context,
-    private val settingsRepository: com.yandex.practicum.middle_homework_5.settings.ui.contract.SettingsRepository,
+    private val settingsRepository: SettingsRepository,
     private val scope: CoroutineScope = CoroutineScope(Job() + Dispatchers.IO)
 ) : WorkManagerService {
     private var period:Long = DEFAULT_REFRESH_PERIOD
