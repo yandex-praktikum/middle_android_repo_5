@@ -1,2 +1,7 @@
 <resources>
+    <string name="app_name">App Name</string>
+    <string name="periodic_refresh_minutes">Refresh every N minutes</string>
+    <string name="delay_first_launch_sec">Delay on launch</string>
+    <string name="save_setting">Save Settings</string>
+    <string name="navbar_icon">Settings</string>
 </resources>

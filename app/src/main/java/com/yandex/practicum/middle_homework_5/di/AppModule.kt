@@ -18,5 +18,5 @@ val appModule = module {
     single<NewsDatabase> { SourceProvider.provideNewsDatabase() }
     single<DataStoreService> { DataStoreServiceImpl(androidApplication()) }
     single<WorkManagerService> { WorkManagerServiceImp(androidApplication(), get()) }
-    viewModel { AppViewModel(get(), get(), get(), get()) }
+    viewModel { AppViewModel(get(), get(), get()) }
 }

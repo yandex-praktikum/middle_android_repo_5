@@ -1,3 +1,7 @@
+import com.example.buildsrc.FindUntranslatedStringsPlugin
+
+apply<FindUntranslatedStringsPlugin>()
+
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
@@ -39,6 +43,12 @@ android {
     }
 }
 
+tasks {
+    named("preBuild") {
+        dependsOn("untranslatedStrings")
+    }
+}
+
 dependencies {
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.lifecycle.runtime.ktx)
@@ -66,4 +76,6 @@ dependencies {
     androidTestImplementation(libs.androidx.ui.test.junit4)
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
+
+    implementation(project(":settings"))
 }
